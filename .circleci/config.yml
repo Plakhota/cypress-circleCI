@@ -7,11 +7,4 @@ jobs:
 
     steps:
       - checkout:
-      - run:
-        command: |
-          npm install
-          echo 'export GIT_SHA1=$CIRCLE_SHA1' >> $BASH_ENV
-          echo $GIT_SHA1
-          #export APPLITOOLS_BATCH_ID=`uuidgen`
-          pwd
-          ls -a
+    
