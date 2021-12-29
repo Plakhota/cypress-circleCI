@@ -7,10 +7,14 @@ jobs:
 
     steps:
       - checkout:
-      - run:
+      -run: npm install
+      -run:
           command: |
             echo 'export GIT_SHA1=$CIRCLE_SHA1' >> $BASH_ENV
             echo $GIT_SHA1
             #export APPLITOOLS_BATCH_ID=`uuidgen`
             pwd
             ls -a
+      -run: npx eyes-setup
+      -run: cpx cypress run
+      
