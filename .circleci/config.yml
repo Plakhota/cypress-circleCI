@@ -1,0 +1,16 @@
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.0
+      
+    working_directory: ~/repo
+
+    steps:
+      - checkout:
+      - run:
+          command: |
+            echo 'export GIT_SHA1=$CIRCLE_SHA1' >> $BASH_ENV
+            echo $GIT_SHA1
+            #export APPLITOOLS_BATCH_ID=`uuidgen`
+            pwd
+            ls -a
